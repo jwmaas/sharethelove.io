@@ -1,0 +1,247 @@
+I have created a remote control in Lovelace using picture elements. The button are from imagefu.com.
+The button png files are located in /local/images_tvremote directory which on hass.io is located in the www directory located in the config directory.
+Each button is linked to a script which executes the relevant command(s).
+I will include a picture of the remote as soon as I know how to add it.
+
+The Lovelace yaml file includes the following:
+
+####################################################
+### Entertainment remote control                 ###
+####################################################
+        
+  - title: TV
+    icon: mdi:television
+    cards:
+      - type: picture-elements
+        image: /local/images_tvremote/background_white2.png
+        elements:
+# Remote for Apple TV zitkamer
+          - type: image
+            tap_action: call-service
+            service: script.atv_cursor_up
+            image: /local/images_tvremote/atv_cursor_up.png
+            style:
+              top: 4%
+              margin-left: 179px                     
+          - type: image
+            tap_action: call-service
+            service: script.atv_replay_30sec
+            image: /local/images_tvremote/atv_replay_30sec.png
+            style:
+              top: 12%
+              left: 46px                     
+          - type: image
+            tap_action: call-service
+            service: script.atv_cursor_left
+            image: /local/images_tvremote/atv_cursor_left.png
+            style:
+              top: 12%
+              left: 100px
+          - type: image
+            tap_action: call-service
+            service: script.atv_ok
+            image: /local/images_tvremote/atv_ok.png
+            style:
+              top: 12%
+              left: 179px  
+          - type: image
+            tap_action: call-service
+            service: script.atv_cursor_right
+            image: /local/images_tvremote/atv_cursor_right.png
+            style:
+              top: 12%
+              left: 259px        
+          - type: image
+            tap_action: call-service
+            service: script.atv_skip_30sec
+            image: /local/images_tvremote/atv_skip_30sec.png
+            style:
+              top: 12%
+              left: 309px 
+          - type: image
+            tap_action: call-service
+            service: script.atv_menu
+            image: /local/images_tvremote/atv_menu.png
+            style:
+              top: 20%
+              left: 65px 
+          - type: image
+            tap_action: call-service
+            service: script.atv_cursor_down
+            image: /local/images_tvremote/atv_cursor_down.png
+            style:
+              top: 20%
+              left: 179px
+          - type: image
+            tap_action: call-service
+            service: script.atv_play_pause
+            image: /local/images_tvremote/atv_play_pause.png
+            style:
+              top: 20%
+              left: 283px
+# Numeric keypad for TV
+          - type: image
+            tap_action: call-service
+            service: script.tv_channel_1
+            image: /local/images_tvremote/ch_1.png
+            style:
+              top: 28%
+              left: 73px 
+          - type: image
+            tap_action: call-service
+            service: script.tv_channel_2
+            image: /local/images_tvremote/ch_2.png
+            style:
+              top: 28%
+              left: 179px
+          - type: image
+            tap_action: call-service
+            service: script.tv_channel_3
+            image: /local/images_tvremote/ch_3.png
+            style:
+              top: 28%
+              left: 283px        
+          - type: image
+            tap_action: call-service
+            service: script.tv_channel_4
+            image: /local/images_tvremote/ch_4.png
+            style:
+              top: 33%
+              left: 73px 
+          - type: image
+            tap_action: call-service
+            service: script.tv_channel_5
+            image: /local/images_tvremote/ch_5.png
+            style:
+              top: 33%
+              left: 179px
+          - type: image
+            tap_action: call-service
+            service: script.tv_channel_6
+            image: /local/images_tvremote/ch_6.png
+            style:
+              top: 33%
+              left: 283px        
+          - type: image
+            tap_action: call-service
+            service: script.tv_channel_7
+            image: /local/images_tvremote/ch_7.png
+            style:
+              top: 38%
+              left: 73px 
+          - type: image
+            tap_action: call-service
+            service: script.tv_channel_8
+            image: /local/images_tvremote/ch_8.png
+            style:
+              top: 38%
+              left: 179px
+          - type: image
+            tap_action: call-service
+            service: script.tv_channel_9
+            image: /local/images_tvremote/ch_9.png
+            style:
+              top: 38%
+              left: 283px 
+              margin-right: 0px
+          - type: image
+            tap_action: call-service
+            service: script.tv_channel_0
+            image: /local/images_tvremote/ch_0.png
+            style:
+              top: 43%
+              left: 179px
+### TV Volume and channel control
+          - type: image
+            tap_action: call-service
+            service: script.bose_vol_up
+            image: /local/images_tvremote/vol_up.png
+            style:
+              top: 50%
+              left: 73px 
+          - type: image
+            tap_action: call-service
+            service: script.naar_televisie
+            image: /local/images_tvremote/naar_tv.png
+            style:
+              top: 50%
+              left: 179px
+          - type: image
+            tap_action: call-service
+            service: script.tv_channelup
+            image: /local/images_tvremote/ch_up.png
+            style:
+              top: 50%
+              left: 283px
+          - type: image
+            tap_action: call-service
+            service: script.bose_mute
+            image: /local/images_tvremote/vol_mute.png
+            style:
+              top: 58%
+              left: 73px 
+          - type: image
+            tap_action: call-service
+            service: script.naar_apple_tv
+            image: /local/images_tvremote/naar_apple_tv.png
+            style:
+              top: 58%
+              left: 179px
+          - type: image
+            tap_action: call-service
+            service: script.tv_channeljump
+            image: /local/images_tvremote/ch_jump.png
+            style:
+              top: 58%
+              left: 283px 
+          - type: image
+            tap_action: call-service
+            service: script.bose_vol_down
+            image: /local/images_tvremote/vol_down.png
+            style:
+              top: 66%
+              left: 73px 
+          - type: image
+            tap_action: call-service
+            service: script.naar_sonos
+            image: /local/images_tvremote/naar_sonos.png
+            style:
+              top: 66%
+              left: 179px
+          - type: image
+            tap_action: call-service
+            service: script.tv_channeldown
+            image: /local/images_tvremote/ch_down.png
+            style:
+              top: 66%
+              left: 283px                           
+### Alle entertainment aan of uit                           
+          - type: image
+            tap_action: call-service
+            service: script.alles_aan_uit
+            image: /local/images_tvremote/alles_aan_uit.png
+            style:
+              top: 74% 
+              margin-left: 179px 
+          - type: image
+            tap_action: call-service
+            service: script.tv_on_off
+            image: /local/images_tvremote/tv_toggle.png
+            style:
+              top: 82%
+              left: 73px 
+          - type: image
+            tap_action: call-service
+            service: script.tv_return
+            image: /local/images_tvremote/tv_return.png
+            style:
+              top: 82%
+              left: 179px
+          - type: image
+            tap_action: call-service
+            service: script.bose_on_off
+            image: /local/images_tvremote/bose_toggle.png
+            style:
+              top: 82%
+              left: 283px 
+### End of entertainment controls ####
